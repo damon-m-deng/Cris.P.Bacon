@@ -1,2 +1,2 @@
 # Cris.P.Bacon
-Personal projects and more
+Personal projects, study notes and more
