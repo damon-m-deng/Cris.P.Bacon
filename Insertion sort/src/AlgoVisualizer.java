@@ -7,9 +7,9 @@ public class AlgoVisualizer {
     private InsertionSortData data;
     private AlgoFrame frame;
 
-    public AlgoVisualizer(int sceneWidth, int sceneHeight, int N){
+    public AlgoVisualizer(int sceneWidth, int sceneHeight, int N, InsertionSortData.Type dataType){
 
-        data = new InsertionSortData(N, sceneHeight);
+        data = new InsertionSortData(N, sceneHeight, dataType);
 
         EventQueue.invokeLater(() -> {
             frame = new AlgoFrame("Insertion Sort Visualization", sceneWidth, sceneHeight);
@@ -18,6 +18,10 @@ public class AlgoVisualizer {
                 run();
             }).start();
         });
+    }
+
+    public AlgoVisualizer(int sceneWidth, int sceneHeight, int N){
+        this(sceneWidth, sceneHeight, N, InsertionSortData.Type.Default);
     }
 
     public void run(){
@@ -50,6 +54,6 @@ public class AlgoVisualizer {
         int sceneHeight = 800;
         int N = 100;
 
-        AlgoVisualizer vis = new AlgoVisualizer(sceneWidth, sceneHeight, N);
+        AlgoVisualizer vis = new AlgoVisualizer(sceneWidth, sceneHeight, N, InsertionSortData.Type.NearlyOrdered);
     }
 }
